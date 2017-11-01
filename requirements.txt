@@ -1,6 +1,5 @@
 opencv-python
 numpy
-pytest-cov
 pytest
-codecov
+pytest-cov
 codacy-coverage
