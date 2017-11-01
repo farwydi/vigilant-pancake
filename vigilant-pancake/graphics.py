@@ -16,7 +16,7 @@ class Graphics(object):
         self.BG = None
         self.clear()
 
-    def __del__(self):
+    def __del__(self):  # pragma: no cover
         cv2.destroyWindow(config.WORLD_NAME)
         self.BG = None
 
@@ -24,7 +24,7 @@ class Graphics(object):
         self.BG = np.zeros((config.WORLD_SIZE[0], config.WORLD_SIZE[1], 3), np.uint8)
 
     def render(self):
-        cv2.imshow(config.WORLD_NAME, self.BG)
+        cv2.imshow(config.WORLD_NAME, self.BG)  # pragma: no cover
 
     def draw_rectangle(self, start, end, color, thickness=-1):
         cv2.rectangle(self.BG, start, end, color, thickness)

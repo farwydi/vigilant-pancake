@@ -1,11 +1,9 @@
-try:
+try:  # pragma: no cover
     import cv2
-except ImportError:
+except ImportError:  # pragma: no cover
     raise ImportError("Please install OpenCV - pip install opencv-python")
 
-try:
+try:  # pragma: no cover
     import numpy
-except ImportError:
+except ImportError:  # pragma: no cover
     raise ImportError("Please install numpy - pip install numpy")
-
-from . import graphics
