@@ -6,7 +6,7 @@ python:
 sudo: false
 
 before_install:
-  - export PYTHONPATH=$HOME/builds/icddex/vigilant-pancake/vigilant-pancake
+  - export PYTHONPATH=$HOME/builds/icddex/vigilant-pancake/src
 
 install:
   - pip install codacy-coverage coverage
@@ -14,8 +14,13 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - pytest tests
+  - pytest
 
 after_script:
   - coverage xml
   - python-codacy-coverage -r coverage.xml
+
+notifications:
+  email:
+    on_success: never
+    on_failure: always
