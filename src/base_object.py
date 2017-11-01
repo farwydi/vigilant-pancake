@@ -4,7 +4,7 @@ import config
 import dmath
 
 
-class Object(object):
+class BaseObject(object):
     def __init__(self, graphics, manager, name):
         """
         Args:

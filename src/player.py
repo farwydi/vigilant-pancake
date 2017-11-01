@@ -1,18 +1,23 @@
 import config
-import controller
+import base_object
+import dmath
 
 
-class Player(controller.Object):
-    def __init__(self, gm, manager, name, size):
-        super().__init__(gm, manager, name)
+class Player(base_object.BaseObject):
+    def __init__(self, graphics, manager, name, size):
+        """
+        Args:
+            graphics (graphics.Graphics):
+            manager (manager.Manager):
+            name (str):
+            size (int):
+        """
+        super().__init__(graphics, manager, name)
         self.size = size
         self.health = 0
         self.death = False
         self.rotation = 0
         self.score = 0
-        self.__score_buffer = 0
-        self.rotate_mem = False
-        self.action = ''
         self.re_init()
 
     def re_init(self):
@@ -21,23 +26,16 @@ class Player(controller.Object):
         self.death = False
         self.rotation = 0
         self.score = 0
-        self.__score_buffer = 0
-        self.rotate_mem = False
-        self.action = ''
 
     def get_info(self, offset):
-        text = self.name + '    ' + \
-               str(self.health) + '   ' + \
-               str(self.score) + '  ' + str(self.action)
-        self.gmt.drawText(text, offset, self.color)
+        text = self.name + '    ' + str(self.health) + '   ' + str(self.score)
+        self.graphics.drawText(text, offset, self.color)
 
     def draw(self):
         if not self.death:
-            self.gmt.drawLine(tuple(self.position), tuple(
-                self.get_move(self.position, self.rotation, 15)), self.color)
-            self.gmt.drawCircle(tuple(self.position), self.size, self.color)
-            self.gmt.drawCircle(tuple(self.position),
-                                self.size + config.PLAYER_VISION, self.color, 1)
+            self.graphics.drawLine(self.position, dmath.get_move(self.position, self.rotation, 15), self.color)
+            self.graphics.drawCircle(self.position, self.size, self.color)
+            self.graphics.drawCircle(self.position, self.size + config.PLAYER_VISION, self.color, 1)
 
     def life(self):
         self.rotate_mem = False
