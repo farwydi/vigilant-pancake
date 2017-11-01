@@ -3,11 +3,18 @@ language: python
 python:
   - 3.6
 
+sudo: false
+
+before_install:
+  - export PYTHONPATH=$HOME/builds/icddex/vigilant-pancake/vigilant-pancake
+
 install:
+  - pip install codacy-coverage coverage
+  - pip install pytest
   - pip install -r requirements.txt
 
 script:
-  - pytest --cov=vigilant-pancake tests
+  - pytest tests
 
 after_script:
   - coverage xml
