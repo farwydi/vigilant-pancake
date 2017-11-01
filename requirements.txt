@@ -3,3 +3,4 @@ numpy
 pytest-cov
 pytest
 codecov
+codacy-coverage

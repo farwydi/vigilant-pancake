@@ -11,3 +11,5 @@ script:
 
 after_script:
   - codecov --token=$CODEDOV_TOKEN
+  - coverage xml
+  - python-codacy-coverage -r coverage.xml
