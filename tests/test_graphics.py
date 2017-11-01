@@ -29,10 +29,10 @@ def test_clear(graphics):
     assert np.count_nonzero(graphics.BG) == 0
 
 
-# def test_draw_circle(graphics):
-#     graphics.clear()
-#     graphics.draw_circle((1, 1), 5, (255, 255, 255))
-#     assert np.count_nonzero(graphics.BG) == 111
+def test_draw_circle(graphics):
+    graphics.clear()
+    graphics.draw_circle((1, 1), 5, (255, 255, 255))
+    assert np.count_nonzero(graphics.BG) == 111
 
 
 def test_draw_text(graphics):
