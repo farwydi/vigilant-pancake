@@ -10,6 +10,5 @@ script:
   - pytest --cov=vigilant-pancake tests
 
 after_script:
-  - codecov --token=$CODEDOV_TOKEN
   - coverage xml
   - python-codacy-coverage -r coverage.xml

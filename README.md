@@ -1,4 +1,4 @@
 # vigilant-pancake
 The game for learning neural network.
 
-[![Build Status](https://travis-ci.org/icddex/vigilant-pancake.svg?branch=master)](https://travis-ci.org/icddex/vigilant-pancake) [![codecov](https://codecov.io/gh/icddex/vigilant-pancake/branch/master/graph/badge.svg)](https://codecov.io/gh/icddex/vigilant-pancake)
+[![Build Status](https://travis-ci.org/icddex/vigilant-pancake.svg?branch=master)](https://travis-ci.org/icddex/vigilant-pancake) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ab6b39c1c117452e97e33278a13f9363)](https://www.codacy.com/app/icddex/vigilant-pancake?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=icddex/vigilant-pancake&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/ab6b39c1c117452e97e33278a13f9363)](https://www.codacy.com/app/icddex/vigilant-pancake?utm_source=github.com&utm_medium=referral&utm_content=icddex/vigilant-pancake&utm_campaign=Badge_Coverage)
