@@ -7,7 +7,7 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - pytest tests --cov=vigilant-pancake
+  - pytest --cov=vigilant-pancake tests
 
-before_script:
+after_script:
   - codecov --token=$CODEDOV_TOKEN
