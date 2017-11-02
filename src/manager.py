@@ -22,7 +22,8 @@ class Manager:
         self.graphics = graphics
         self.objects = []
 
-    def __gen_name(self):
+    @classmethod
+    def gen_name(cls):
         """
         Returns:
             str: Random name.
@@ -57,7 +58,7 @@ class Manager:
             player.Player: Created object.
         """
         if name is None:
-            name = self.__gen_name()
+            name = self.gen_name()
 
         obj = player.Player(self.graphics, self, name, size)
         self.objects.append(obj)
