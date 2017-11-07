@@ -1,8 +1,55 @@
-import graphics
-import manager
+import cv2
 
-if __name__ == 'main':
-    graphics = graphics.Graphics()
-    manager = manager.Manager(graphics)
+import config
+import graphics as gr
+import manager as mg
 
-    manager.create_player(30)
+graphics = gr.Graphics()
+manager = mg.Manager(graphics)
+
+
+def init():
+    """
+    First initialization world.
+    """
+    manager.create_player()
+
+
+def cycle(iteration):
+    """
+    Life cycle.
+
+    Args:
+        iteration:
+
+    Returns:
+        bool: False - end game.
+
+    """
+    print('New cycle: {}'.format(iteration))
+    graphics.clear()
+    manager.draw_all()
+    graphics.render()
+
+    key = cv2.waitKey()
+
+    if key & 0xFF == ord('1'):
+        pass
+
+    if key & 0xFF == ord('q'):
+        return False
+
+    graphics.clear()
+    manager.draw_all()
+
+    graphics.render()
+    return True
+
+
+if __name__ == '__main__':
+    tick = 0
+
+    init()
+
+    while cycle(tick):
+        tick += 1

@@ -1,9 +1,8 @@
-# import box
-import uuid
-
-# import config
 import base_object
+import config
+import graphics as gr
 import player
+import utilities
 
 
 class Manager:
@@ -14,21 +13,17 @@ class Manager:
         objects (list[base_object.BaseObject]): List of all objects.
     """
 
-    def __init__(self, graphics):
+    def __init__(self, graphics=None):
         """
         Args:
-            graphics (graphics.Graphics):
+            graphics (Optional[graphics.Graphics]):
         """
         self.graphics = graphics
-        self.objects = []
 
-    @classmethod
-    def gen_name(cls):
-        """
-        Returns:
-            str: Random name.
-        """
-        return str(uuid.uuid4())[:8]
+        if self.graphics is None:
+            self.graphics = gr.Graphics()
+
+        self.objects = []
 
     def get_by_name(self, name):
         """
@@ -46,20 +41,27 @@ class Manager:
 
         return None
 
-    def create_player(self, size, name=None):
+    def create_player(self, size=config.PLAYER_SIZE, name=None):
         """
         Create new Player.
 
         Args:
-            size (int): Object size.
-            name (str): Unique name of object.
+            size (Optional[int]): Object size.
+            name (Optional[str]): Unique name of object.
 
         Returns:
             player.Player: Created object.
         """
         if name is None:
-            name = self.gen_name()
+            name = utilities.gen_name()
 
-        obj = player.Player(self.graphics, self, name, size)
+        obj = player.Player(self.graphics, self, size, name)
         self.objects.append(obj)
         return obj
+
+    def draw_all(self):
+        """
+        Draw All Object.
+        """
+        for obj in self.objects:
+            obj.draw()

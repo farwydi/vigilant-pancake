@@ -1,7 +1,7 @@
 import random
 
 import config
-import dmath
+import utilities
 
 
 class BaseObject(object):
@@ -37,22 +37,22 @@ class BaseObject(object):
         Move object forward.
 
         Args:
-            force (float): The distance to which the object moves.
+            force (Optional[float]): The distance to which the object moves.
 
         Returns:
             None:
         """
-        self.position = dmath.get_move(self.position, self.rotation, force)
+        self.position = utilities.get_move(self.position, self.rotation, force)
 
     def rotate(self, angle):
         """
         Rotate object on angle.
 
         Args:
-            angle (float): Angel of rotate.
+            angle (int): Angel of rotate.
 
         Returns:
             None:
         """
-        self.rotation += angle * 360
-        self.rotation -= round(self.rotation / 360) * 360
+        self.rotation += angle
+        self.rotation -= round(self.rotation // 360) * 360

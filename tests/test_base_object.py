@@ -45,18 +45,18 @@ def test_rotate(base):
     Args:
         base (bo.BaseObject):
     """
-    base.rotation = 0.0
-
-    # 180
-    base.rotate(0.5)
+    base.rotation = 0
+    base.rotate(180)
     assert base.rotation == 180
 
-    base.rotation = 0.0
-
-    base.rotate(4.5)
+    base.rotation = 0
+    base.rotate(-180)
     assert base.rotation == 180
 
-    base.rotation = 0.0
+    base.rotation = 0
+    base.rotate(540)
+    assert base.rotation == 180
 
-    base.rotate(-4.5)
-    assert base.rotation == -180
+    base.rotation = 0
+    base.rotate(-540)
+    assert base.rotation == 180
