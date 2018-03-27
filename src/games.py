@@ -18,11 +18,19 @@ done = False
 
 
 class LiveObject(object):
-    pass
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def move(self, x, y):
+        pass
 
 
 class AI(LiveObject):
-    pass
+    def __init__(self, x, y):
+        super().__init__(x, y)
+
+        self.type = 1
 
 
 score = 0
