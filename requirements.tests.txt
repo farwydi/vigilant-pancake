@@ -1,3 +1,6 @@
 pygame
 numpy
 pytest
+pytest-cov
+codacy-coverage
+coverage

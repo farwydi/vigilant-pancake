@@ -6,12 +6,10 @@ python:
 sudo: false
 
 before_install:
-  - export PYTHONPATH=$HOME/build/icddex/vigilant-pancake/src
+  - export PYTHONPATH=$HOME/build/farwydi/vigilant-pancake/src
 
 install:
-  - pip install codacy-coverage coverage
-  - pip install pytest pytest-cov
-  - pip install -r requirements.txt
+  - pip install -r requirements.tests.txt
 
 script:
   - pytest --cov=./src tests
