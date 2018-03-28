@@ -47,3 +47,14 @@ fill_grid(3, well_fill, config.MAX_WALL_COUNT)
 live_x = 23
 live_y = 23
 grid[live_x][live_y] = 4
+
+
+def read_canvas(file_name: str):
+    with open(file_name, 'r') as f:
+        x = f.readlines()[0].rstrip()
+        config.PLANCK_LENGTH, config.COUNT_LINE_OBJECT = x.split('-')
+
+
+def save_canvas(file_name: str):
+    with open(file_name, 'w') as f:
+        f.write(f"{config.PLANCK_LENGTH}-{config.COUNT_LINE_OBJECT}\n")

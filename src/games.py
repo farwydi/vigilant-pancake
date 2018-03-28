@@ -5,7 +5,7 @@ import numpy
 import pygame
 
 import config
-from canvas import grid, live_x, live_y
+from canvas import grid, live_x, live_y, save_canvas, read_canvas
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -130,3 +130,6 @@ while not done:
     pygame.display.flip()
 
 pygame.quit()
+
+save_canvas("out.a")
+read_canvas("out.a")
